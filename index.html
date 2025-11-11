@@ -4,65 +4,754 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="DonRock Global Services Ltd - Leading construction company in Nigeria specializing in residential and commercial buildings">
   <title>DonRock Global Services Ltd | Construction Company in Nigeria</title>
   <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body>
+<body class="bg-gray-50">
+  <!-- Header Navigation -->
   <header id="mainHeader"
     class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-shadow duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-16 flex items-center justify-between">
         <!-- Logo -->
-        <a href="start.html" class="flex items-center gap-2 group">
-          <img src="src/assets/logo.svg" alt="LMS Logo" class="h-8 md:h-9 transition-transform group-hover:scale-105">
+        <a href="#hero" class="flex items-center gap-2 group">
+          <div
+            class="h-10 w-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">DR</span>
+          </div>
           <span
-            class="hidden sm:block text-lg font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">LMS</span>
+            class="hidden sm:block text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">DonRock</span>
         </a>
         <!-- Navigation -->
-        <nav class="hidden md:flex space-x-4">
-          <a href="about.html" class="text-gray-700 hover:text-violet-600 transition-colors">About</a>
-          <a href="services.html" class="text-gray-700 hover:text-violet-600 transition-colors">Services</a>
-          <a href="contact.html" class="text-gray-700 hover:text-violet-600 transition-colors">Contact</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#hero" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+          <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+          <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Services</a>
+          <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Portfolio</a>
+          <a href="#testimonials"
+            class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Testimonials</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
         </nav>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white">
+      <nav class="flex flex-col px-4 py-4 space-y-3">
+        <a href="#hero" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">About</a>
+        <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Services</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Portfolio</a>
+        <a href="#testimonials"
+          class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Testimonials</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Contact</a>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section
-      class="bg-blue-200 text-white font-bold text-center my-auto items-center justify-center h-screen w-full flex flex-col">
-
-      <h1>DonRock Global Services Ltd</h1>
-      <p>Construction Company in Nigeria</p>
-      <button>Get a Quote</button>
+    <!-- Hero Section -->
+    <section id="hero"
+      class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+          DonRock Global Services Ltd
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+          Building Excellence, Constructing Dreams. Your trusted construction partner in Nigeria.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact"
+            class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Get a Quote
+          </a>
+          <a href="#portfolio"
+            class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300">
+            View Our Work
+          </a>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
     </section>
-    <section
-      class="bg-red-500 text-white font-bold text-center my-auto items-center justify-center h-screen w-full flex flex-col">
 
-      <h2>About Us</h2>
-      <p>We are a construction company in Nigeria that specializes in building homes and commercial buildings.</p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comprehensive construction solutions tailored to meet your needs
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Residential Construction</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Building beautiful, durable homes that stand the test of time. From design to completion, we handle every
+              aspect of residential construction.
+            </p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Buildings</h3>
+            <p class="text-gray-600 leading-relaxed">
+              State-of-the-art commercial facilities designed for functionality and efficiency. We deliver projects on
+              time and within budget.
+            </p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                </path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Renovation & Remodeling</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Transform your existing space with our expert renovation services. We breathe new life into old structures
+              while maintaining their character.
+            </p>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Maintenance Services</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Keep your property in top condition with our comprehensive maintenance programs. Regular upkeep ensures
+              longevity and value.
+            </p>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Project Management</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Expert project management ensuring seamless coordination, timely delivery, and quality assurance
+              throughout the construction process.
+            </p>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Consultation & Design</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Professional architectural consultation and design services to bring your vision to life with innovative
+              and practical solutions.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    <section
-      class="bg-green-500 text-white font-bold text-center my-auto items-center justify-center h-screen w-full flex flex-col">
 
-      <h2>Services</h2>
-      <p>We offer a wide range of services including construction, renovation, and maintenance.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About DonRock</h2>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+              DonRock Global Services Ltd is a leading construction company in Nigeria, specializing in building homes
+              and commercial buildings. With years of experience and a commitment to excellence, we have established
+              ourselves as a trusted partner in the construction industry.
+            </p>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+              Our team of skilled professionals combines traditional craftsmanship with modern techniques to deliver
+              projects that exceed expectations. We pride ourselves on quality, reliability, and customer satisfaction.
+            </p>
+            <div class="grid grid-cols-2 gap-6 mt-8">
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                <div class="text-gray-600">Projects Completed</div>
+              </div>
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                <div class="text-gray-600">Years Experience</div>
+              </div>
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">200+</div>
+                <div class="text-gray-600">Happy Clients</div>
+              </div>
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
+                <div class="text-gray-600">Satisfaction Rate</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-2xl">
+              <h3 class="text-3xl font-bold mb-6">Our Mission</h3>
+              <p class="text-blue-100 text-lg leading-relaxed mb-6">
+                To deliver exceptional construction services that build lasting value for our clients while maintaining
+                the highest standards of quality, safety, and professionalism.
+              </p>
+              <h3 class="text-3xl font-bold mb-6">Our Vision</h3>
+              <p class="text-blue-100 text-lg leading-relaxed">
+                To be Nigeria's most trusted and innovative construction company, recognized for excellence in every
+                project we undertake.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section
-      class="bg-yellow-500 text-white font-bold text-center my-auto items-center justify-center h-screen w-full flex flex-col">
 
-      <h2>Contact Us</h2>
-      <p>We are a construction company in Nigeria that specializes in building homes and commercial buildings.</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Showcasing our finest construction projects and achievements
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Portfolio Item 1 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-blue-400 to-blue-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Modern Residential Complex</h3>
+                <p class="text-gray-200">Luxury apartments with modern amenities in Lagos</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 2 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-gray-400 to-gray-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Commercial Office Building</h3>
+                <p class="text-gray-200">State-of-the-art business center in Abuja</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 3 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-green-400 to-green-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Luxury Villa Estate</h3>
+                <p class="text-gray-200">Premium residential development in Port Harcourt</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 4 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-purple-400 to-purple-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Shopping Mall Complex</h3>
+                <p class="text-gray-200">Modern retail space in Kano</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 5 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-orange-400 to-orange-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Educational Facility</h3>
+                <p class="text-gray-200">School building project in Enugu</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 6 -->
+          <div
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-teal-400 to-teal-600">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Hospital Renovation</h3>
+                <p class="text-gray-200">Healthcare facility upgrade in Ibadan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section
-      class="bg-purple-500 text-white font-bold text-center my-auto items-center justify-center h-screen w-full flex flex-col">
 
-      <h2>Contact Us</h2>
-      <p>We are a construction company in Nigeria that specializes in building homes and commercial buildings.</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            What our clients say about working with DonRock Global Services
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              "DonRock delivered an exceptional residential project for us. Their attention to detail and
+              professionalism throughout the construction process was outstanding. Highly recommended!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                AO
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Adebayo Ogunleye</div>
+                <div class="text-sm text-gray-500">Lagos, Nigeria</div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              "Working with DonRock was a pleasure. They completed our commercial building project on time and within
+              budget. Their team's expertise and communication were excellent throughout."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                FK
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Fatima Kano</div>
+                <div class="text-sm text-gray-500">Abuja, Nigeria</div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              "The renovation work DonRock did on our property exceeded all expectations. Quality craftsmanship, timely
+              delivery, and excellent customer service. We couldn't be happier!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                CE
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Chukwuemeka Eze</div>
+                <div class="text-sm text-gray-500">Port Harcourt, Nigeria</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Ready to start your construction project? Contact us today for a free consultation
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <!-- Address -->
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Address</h4>
+                  <p class="text-gray-600">123 Construction Avenue<br>Lagos, Nigeria</p>
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
+                  <p class="text-gray-600">+234 123 456 7890</p>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+                  <p class="text-gray-600">info@donrockglobal.com</p>
+                </div>
+              </div>
+              <!-- Business Hours -->
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Business Hours</h4>
+                  <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="bg-gray-50 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  placeholder="John Doe">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  placeholder="john@example.com">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  placeholder="+234 123 456 7890">
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                <input type="text" id="subject" name="subject" required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  placeholder="Project Inquiry">
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none"
+                  placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-</body>
-<script type="module" src="src/main.js"></script>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Company Info -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div
+              class="h-10 w-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-xl">DR</span>
+            </div>
+            <span class="text-lg font-bold text-white">DonRock</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed">
+            Building excellence and constructing dreams across Nigeria. Your trusted construction partner.
+          </p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+          </ul>
+        </div>
+        <!-- Services -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#services" class="hover:text-white transition-colors">Residential Construction</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Commercial Buildings</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Renovation & Remodeling</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Maintenance Services</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              +234 123 456 7890
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              info@donrockglobal.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p class="text-gray-400">
+          &copy; 2024 DonRock Global Services Ltd. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+  <script>
+    // Mobile menu toggle functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
