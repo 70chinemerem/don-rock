@@ -18,6 +18,9 @@
       <div class="h-16 flex items-center justify-between">
         <!-- Logo -->
         <a href="#hero" class="flex items-center gap-2 group">
+          <!-- Logo Image (optional - uncomment and add your logo) -->
+          <!-- <img src="src/assets/images" alt="DonRock Global Services Logo" class="h-10 w-auto"> -->
+          <!-- Fallback Logo -->
           <div
             class="h-10 w-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
             <span class="text-white font-bold text-xl">DR</span>
@@ -33,6 +36,7 @@
           <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Portfolio</a>
           <a href="#testimonials"
             class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Testimonials</a>
+          <a href="#faq" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</a>
           <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
         </nav>
         <!-- Mobile Menu Button -->
@@ -52,6 +56,7 @@
         <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Portfolio</a>
         <a href="#testimonials"
           class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Testimonials</a>
+        <a href="#faq" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">FAQ</a>
         <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2">Contact</a>
       </nav>
     </div>
@@ -60,8 +65,11 @@
   <main>
     <!-- Hero Section -->
     <section id="hero"
-      class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
-      <div class="absolute inset-0 bg-black/20"></div>
+      class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
+      <!-- Background Image -->
+      <img src="src/assets/images/hero-background.jpg" alt="Construction site with chippings and stones"
+        class="absolute inset-0 w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-black/40"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
           DonRock Global Services Ltd
@@ -231,6 +239,11 @@
             </div>
           </div>
           <div class="relative">
+            <!-- Company/Facility Image -->
+            <div class="mb-6 rounded-2xl overflow-hidden shadow-xl">
+              <img src="src/assets/images/company-facility.jpg" alt="DonRock Global Services facility"
+                class="w-full h-64 object-cover">
+            </div>
             <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-2xl">
               <h3 class="text-3xl font-bold mb-6">Our Mission</h3>
               <p class="text-blue-100 text-lg leading-relaxed mb-6">
@@ -243,6 +256,55 @@
                 and innovation in every delivery.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Quality & Certifications</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Committed to excellence with certified quality standards
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Certification 1 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">ISO Certified</h3>
+            <p class="text-gray-600">International quality standards for construction aggregates</p>
+          </div>
+          <!-- Certification 2 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Quality Tested</h3>
+            <p class="text-gray-600">Regular testing ensures consistent quality and durability</p>
+          </div>
+          <!-- Certification 3 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Industry Compliant</h3>
+            <p class="text-gray-600">Meets all Nigerian construction industry standards</p>
           </div>
         </div>
       </div>
@@ -261,13 +323,12 @@
           <!-- Portfolio Item 1 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-blue-400 to-blue-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/granite-chippings.jpg" alt="Granite Chippings 3/4 inch"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -281,13 +342,12 @@
           <!-- Portfolio Item 2 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-gray-400 to-gray-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/crushed-stones.jpg" alt="Crushed Stones 1/2 inch"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -301,13 +361,12 @@
           <!-- Portfolio Item 3 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-green-400 to-green-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/road-base-materials.jpg" alt="Road Base Materials"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -321,13 +380,12 @@
           <!-- Portfolio Item 4 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-purple-400 to-purple-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/fine-chippings.jpg" alt="Fine Chippings 1/4 inch"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -341,13 +399,12 @@
           <!-- Portfolio Item 5 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-orange-400 to-orange-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/coarse-aggregates.jpg" alt="Coarse Aggregates"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -361,13 +418,12 @@
           <!-- Portfolio Item 6 -->
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-teal-400 to-teal-600">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg class="w-24 h-24 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                  </path>
-                </svg>
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
+              <img src="src/assets/images/mixed-graded-stones.jpg" alt="Mixed Graded Stones"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+              <!-- Fallback gradient if image not found -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
             <div
@@ -376,6 +432,104 @@
                 <h3 class="text-2xl font-bold mb-2">Mixed Graded Stones</h3>
                 <p class="text-gray-200">Versatile aggregates for various construction applications</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about our chippings and stones
+          </p>
+        </div>
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">What sizes of chippings do you offer?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                We offer chippings in various sizes including 3/4 inch, 1/2 inch, 1/4 inch, and custom sizes based on your project requirements. Our team can help you determine the best size for your specific construction needs.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">Do you provide delivery services?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                Yes, we offer reliable bulk delivery services across Nigeria. We handle large-scale orders for construction companies, contractors, and infrastructure projects. Delivery schedules can be arranged to meet your project timeline.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">What is the minimum order quantity?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                We accommodate orders of all sizes, from small residential projects to large commercial and infrastructure developments. Please contact us with your specific requirements, and we'll provide a customized quote.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">How do you ensure quality control?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                Our state-of-the-art processing facilities ensure consistent quality and proper grading of all products. We follow international standards and conduct regular quality tests to ensure our aggregates meet the highest specifications for durability and strength.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">Can you provide custom grading services?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                Absolutely! We offer custom grading services to meet your specific project requirements. Our team can provide chippings and stones in any size specification you need, ensuring the perfect match for your construction application.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 6 -->
+          <div class="faq-item bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+            <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-100 transition-colors">
+              <span class="font-semibold text-gray-900">What payment methods do you accept?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-4">
+              <p class="text-gray-600 leading-relaxed">
+                We accept various payment methods including bank transfers, cash, and other agreed-upon payment terms for large orders. Payment terms can be discussed during the quotation process to accommodate your business needs.
+              </p>
             </div>
           </div>
         </div>
@@ -537,6 +691,26 @@
       </div>
     </section>
 
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Subscribe to our newsletter for the latest updates on products, pricing, and construction industry insights
+        </p>
+        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input type="email" id="newsletterEmail" required
+            class="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
+            placeholder="Enter your email address">
+          <button type="submit"
+            class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm text-blue-200 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -578,7 +752,7 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p class="text-gray-600">+234 123 456 7890</p>
+                  <p class="text-gray-600">+234 8037335414 / +234 8057368500</p>
                 </div>
               </div>
               <!-- Email -->
@@ -592,7 +766,7 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p class="text-gray-600">info@donrockglobal.com</p>
+                  <p class="text-gray-600">donrockglobalservicesltd@gmail.com</p>
                 </div>
               </div>
               <!-- Business Hours -->
@@ -631,6 +805,28 @@
                 <input type="tel" id="phone" name="phone"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                   placeholder="+234 123 456 7890">
+              </div>
+              <div>
+                <label for="product" class="block text-sm font-medium text-gray-700 mb-2">Product of Interest</label>
+                <select id="product" name="product"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all bg-white">
+                  <option value="">Select a product</option>
+                  <option value="granite-chippings">Granite Chippings</option>
+                  <option value="crushed-stones">Crushed Stones</option>
+                  <option value="road-base">Road Base Materials</option>
+                  <option value="concrete-aggregates">Concrete Aggregates</option>
+                  <option value="fine-chippings">Fine Chippings</option>
+                  <option value="coarse-aggregates">Coarse Aggregates</option>
+                  <option value="mixed-graded">Mixed Graded Stones</option>
+                  <option value="custom">Custom Grading</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="quantity" class="block text-sm font-medium text-gray-700 mb-2">Estimated Quantity (Tons)</label>
+                <input type="number" id="quantity" name="quantity" min="0" step="0.1"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  placeholder="e.g., 50">
               </div>
               <div>
                 <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
@@ -702,7 +898,7 @@
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
                 </path>
               </svg>
-              +234 123 456 7890
+              +234 8037335414 / +234 8057368500
             </li>
             <li class="flex items-center">
               <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -710,7 +906,7 @@
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                 </path>
               </svg>
-              info@donrockglobal.com
+              email: donrockglobalservicesltd@gmail.com
             </li>
           </ul>
         </div>
@@ -723,7 +919,7 @@
     </div>
   </footer>
 
-  <script type="module" src="src/main.js"></script>
+<script type="module" src="src/main.js"></script>
   <script>
     // Mobile menu toggle functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
