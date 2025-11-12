@@ -73,6 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
+    // Scroll-triggered Animations for All Sections
+    // ============================================
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with fade-in-on-scroll class
+    document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+        scrollObserver.observe(element);
+    });
+
+    // ============================================
     // FAQ Accordion Functionality
     // ============================================
     const faqQuestions = document.querySelectorAll('.faq-question');
