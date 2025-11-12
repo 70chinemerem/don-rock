@@ -335,95 +335,43 @@ function clearFieldError(e) {
     }
 }
 
-// Submit form function (can be customized for your backend)
+// Submit form function - Sends to your email via EmailJS
 async function submitForm(formData) {
-    // ============================================
-    // OPTION 1: EmailJS (Recommended - Easiest)
-    // ============================================
-    // Step 1: Sign up at https://www.emailjs.com/ (free tier: 200 emails/month)
-    // Step 2: Create an email service (Gmail, Outlook, etc.)
-    // Step 3: Create an email template
-    // Step 4: Get your Public Key, Service ID, and Template ID
-    // Step 5: Uncomment the EmailJS script in index.html
-    // Step 6: Uncomment and configure the code below:
-
-    /*
-    // Initialize EmailJS (only needed once)
+    // Check if EmailJS is loaded
     if (typeof emailjs === 'undefined') {
-        throw new Error('EmailJS script not loaded. Uncomment the script tag in index.html');
+        throw new Error('EmailJS script not loaded. Please check your internet connection.');
     }
-    
-    emailjs.init('YOUR_PUBLIC_KEY_HERE'); // Replace with your Public Key from EmailJS dashboard
-    
-    return emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+
+    // ============================================
+    // CONFIGURE YOUR EMAILJS CREDENTIALS HERE
+    // ============================================
+    // Follow these steps to get your credentials:
+    // 1. Go to https://www.emailjs.com/ and sign up (free)
+    // 2. Create a Gmail service and connect your email
+    // 3. Create an email template
+    // 4. Get your Public Key, Service ID, and Template ID
+    // 5. Replace the values below:
+
+    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE'; // Get from EmailJS Account → General
+    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE'; // Get from EmailJS Email Services
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // Get from EmailJS Email Templates
+    const YOUR_EMAIL = 'chinemere2025@icloud.com'; // Your email address
+
+    // Initialize EmailJS
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    // Send email
+    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        to_email: YOUR_EMAIL, // Send to your email
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
         product: formData.product || 'Not specified',
         quantity: formData.quantity || 'Not specified',
         subject: formData.subject,
-        message: formData.message
+        message: formData.message,
+        reply_to: formData.email // So you can reply directly
     });
-    */
-
-    // ============================================
-    // OPTION 2: Backend API (Custom Backend)
-    // ============================================
-    // If you have your own backend server, uncomment and configure:
-
-    /*
-    const response = await fetch('https://yourdomain.com/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    });
-    
-    if (!response.ok) {
-        throw new Error('Failed to submit form');
-    }
-    
-    return response.json();
-    */
-
-    // ============================================
-    // OPTION 3: Formspree (No Backend Needed)
-    // ============================================
-    // Step 1: Sign up at https://formspree.io/ (free tier: 50 submissions/month)
-    // Step 2: Get your form endpoint
-    // Step 3: Uncomment and configure:
-
-    /*
-    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    });
-    
-    if (!response.ok) {
-        throw new Error('Failed to submit form');
-    }
-    
-    return response.json();
-    */
-
-    // ============================================
-    // CURRENT: Simulation (for testing)
-    // ============================================
-    // This is currently active for testing purposes
-    // Replace with one of the options above for production
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    // Log form data (for development)
-    console.log('Contact form submission:', formData);
-    console.log('To enable email sending, configure EmailJS, Backend API, or Formspree in submitForm() function');
-
-    // Simulate success
-    return Promise.resolve({ success: true });
 }
 
 // ============================================
