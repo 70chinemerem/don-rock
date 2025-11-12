@@ -5,9 +5,76 @@ import './style.css'
 console.log('DonRock Global Services application loaded')
 
 // ============================================
-// FAQ Accordion Functionality
+// Hero Section Animations & Effects
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate statistics counter
+    const animateCounter = (element, target, duration = 2000) => {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                element.textContent = target + (element.dataset.count.includes('+') ? '+' : '');
+                element.classList.add('count-animate');
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(start) + (element.dataset.count.includes('+') ? '+' : '');
+            }
+        }, 16);
+    };
+
+    // Intersection Observer for hero stats (using data-count attribute)
+    const heroStatsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted');
+                const target = parseInt(entry.target.dataset.count);
+                if (target) {
+                    animateCounter(entry.target, target);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe all hero stat counters with data-count attribute
+    document.querySelectorAll('[data-count]').forEach(stat => {
+        heroStatsObserver.observe(stat);
+    });
+
+    // Parallax effect for hero background
+    const hero = document.getElementById('hero');
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = hero.querySelector('.relative.z-10');
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroContent.style.opacity = Math.max(0.5, 1 - (scrolled / window.innerHeight) * 0.5);
+            }
+        });
+
+        // Add mouse move parallax effect for floating shapes
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { width, height } = hero.getBoundingClientRect();
+            const xPos = (clientX / width - 0.5) * 30;
+            const yPos = (clientY / height - 0.5) * 30;
+
+            const floatingShapes = hero.querySelectorAll('.animate-float-slow, .animate-float-slow-delayed');
+            floatingShapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.3;
+                const currentTransform = shape.style.transform || '';
+                if (!currentTransform.includes('translate')) {
+                    shape.style.transform = `translate(${xPos * speed}px, ${yPos * speed}px)`;
+                }
+            });
+        });
+    }
+
+    // ============================================
+    // FAQ Accordion Functionality
+    // ============================================
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach(question => {
