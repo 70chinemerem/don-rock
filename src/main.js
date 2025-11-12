@@ -92,6 +92,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ============================================
+    // Portfolio Mobile Touch Support
+    // ============================================
+    // On mobile, descriptions are visible by default via CSS
+    // Optional: Add tap-to-toggle for better mobile UX
+    const portfolioItems = document.querySelectorAll('#portfolio .group');
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    if (isTouchDevice && window.innerWidth < 768) {
+        portfolioItems.forEach(item => {
+            // Find the description overlay (the gradient overlay with text)
+            const overlays = item.querySelectorAll('.absolute.inset-0');
+            const descriptionOverlay = Array.from(overlays).find(overlay => 
+                overlay.classList.contains('bg-gradient-to-t')
+            );
+            
+            if (descriptionOverlay) {
+                let isVisible = true; // Descriptions are visible by default on mobile
+                
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Toggle description visibility
+                    isVisible = !isVisible;
+                    descriptionOverlay.style.opacity = isVisible ? '1' : '0';
+                });
+            }
+        });
+    }
+
+    // ============================================
     // FAQ Accordion Functionality
     // ============================================
     const faqQuestions = document.querySelectorAll('.faq-question');
