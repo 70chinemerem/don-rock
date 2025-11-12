@@ -284,35 +284,7 @@ if (backToTopBtn) {
 // ============================================
 // On mobile, descriptions are visible by default via CSS
 // On desktop, descriptions show on hover
-// Add tap-to-toggle for better mobile UX
-document.addEventListener('DOMContentLoaded', () => {
-    const portfolioItems = document.querySelectorAll('#portfolio .group');
-    
-    // Check if device is touch-enabled
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    if (isTouchDevice && window.innerWidth < 768) {
-        portfolioItems.forEach(item => {
-            const overlay = item.querySelector('.absolute.inset-0.bg-gradient-to-t');
-            if (overlay) {
-                let isVisible = true; // Descriptions are visible by default on mobile
-                
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Toggle description visibility
-                    isVisible = !isVisible;
-                    if (isVisible) {
-                        overlay.style.opacity = '1';
-                    } else {
-                        overlay.style.opacity = '0';
-                    }
-                });
-            }
-        });
-    }
-});
+// Add tap-to-toggle for better mobile UX (optional enhancement)
 
 // ============================================
 // Animated Statistics Counter

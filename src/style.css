@@ -267,7 +267,7 @@ html {
   #portfolio .group .absolute.inset-0.bg-gradient-to-t {
     opacity: 1 !important;
   }
-  
+
   #portfolio .group .absolute.inset-0.bg-gradient-to-br {
     opacity: 0.2 !important;
   }
@@ -278,7 +278,7 @@ html {
   #portfolio .group .absolute.inset-0.bg-gradient-to-t {
     opacity: 0;
   }
-  
+
   #portfolio .group:hover .absolute.inset-0.bg-gradient-to-t {
     opacity: 1;
   }
