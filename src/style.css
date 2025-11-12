@@ -260,3 +260,26 @@ html {
 .card-hover:hover .icon-bounce {
   transform: scale(1.1) rotate(5deg);
 }
+
+/* Mobile Support for Portfolio Descriptions */
+/* Show descriptions by default on mobile, hide on desktop until hover */
+@media (max-width: 767px) {
+  #portfolio .group .absolute.inset-0.bg-gradient-to-t {
+    opacity: 1 !important;
+  }
+  
+  #portfolio .group .absolute.inset-0.bg-gradient-to-br {
+    opacity: 0.2 !important;
+  }
+}
+
+/* Desktop: Keep hover behavior */
+@media (min-width: 768px) {
+  #portfolio .group .absolute.inset-0.bg-gradient-to-t {
+    opacity: 0;
+  }
+  
+  #portfolio .group:hover .absolute.inset-0.bg-gradient-to-t {
+    opacity: 1;
+  }
+}
