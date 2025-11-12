@@ -38,18 +38,134 @@ document.addEventListener('DOMContentLoaded', () => {
 // Newsletter Form Handler
 // ============================================
 const newsletterForm = document.getElementById('newsletterForm');
+const newsletterSubmitBtn = document.getElementById('newsletterSubmitBtn');
+const newsletterBtnText = document.getElementById('newsletterBtnText');
+const newsletterBtnLoader = document.getElementById('newsletterBtnLoader');
+const newsletterSuccess = document.getElementById('newsletterSuccess');
+const newsletterError = document.getElementById('newsletterError');
+
 if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('newsletterEmail').value;
+    // Email validation
+    const newsletterEmail = document.getElementById('newsletterEmail');
 
-        // Here you would typically send this to your backend
-        console.log('Newsletter subscription:', email);
+    newsletterEmail.addEventListener('blur', function () {
+        const email = this.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Show success message
-        alert('Thank you for subscribing to our newsletter!');
-        newsletterForm.reset();
+        if (email && !emailRegex.test(email)) {
+            this.classList.add('border-red-500', 'ring-2', 'ring-red-300');
+        } else {
+            this.classList.remove('border-red-500', 'ring-2', 'ring-red-300');
+        }
     });
+
+    newsletterEmail.addEventListener('input', function () {
+        this.classList.remove('border-red-500', 'ring-2', 'ring-red-300');
+        if (newsletterSuccess) newsletterSuccess.classList.add('hidden');
+        if (newsletterError) newsletterError.classList.add('hidden');
+    });
+
+    newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Hide previous messages
+        if (newsletterSuccess) newsletterSuccess.classList.add('hidden');
+        if (newsletterError) newsletterError.classList.add('hidden');
+
+        const email = newsletterEmail.value.trim();
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            if (newsletterError) newsletterError.classList.remove('hidden');
+            newsletterEmail.classList.add('border-red-500', 'ring-2', 'ring-red-300');
+            return;
+        }
+
+        // Show loading state
+        if (newsletterSubmitBtn) {
+            newsletterSubmitBtn.disabled = true;
+            if (newsletterBtnText) newsletterBtnText.classList.add('hidden');
+            if (newsletterBtnLoader) newsletterBtnLoader.classList.remove('hidden');
+        }
+
+        try {
+            // Subscribe to newsletter
+            await subscribeToNewsletter(email);
+
+            // Show success message
+            if (newsletterSuccess) newsletterSuccess.classList.remove('hidden');
+            if (newsletterError) newsletterError.classList.add('hidden');
+            newsletterForm.reset();
+
+            // Reset button state after delay
+            setTimeout(() => {
+                if (newsletterSubmitBtn) {
+                    newsletterSubmitBtn.disabled = false;
+                    if (newsletterBtnText) newsletterBtnText.classList.remove('hidden');
+                    if (newsletterBtnLoader) newsletterBtnLoader.classList.add('hidden');
+                    if (newsletterSuccess) newsletterSuccess.classList.add('hidden');
+                }
+            }, 5000);
+
+        } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            if (newsletterError) newsletterError.classList.remove('hidden');
+            if (newsletterSuccess) newsletterSuccess.classList.add('hidden');
+
+            // Reset button state
+            if (newsletterSubmitBtn) {
+                newsletterSubmitBtn.disabled = false;
+                if (newsletterBtnText) newsletterBtnText.classList.remove('hidden');
+                if (newsletterBtnLoader) newsletterBtnLoader.classList.add('hidden');
+            }
+        }
+    });
+}
+
+// Newsletter subscription function
+async function subscribeToNewsletter(email) {
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // ============================================
+    // INTEGRATE WITH YOUR NEWSLETTER SERVICE
+    // ============================================
+    // Option 1: Mailchimp
+    // Option 2: SendGrid
+    // Option 3: ConvertKit
+    // Option 4: Custom API endpoint
+    // Option 5: EmailJS (send subscription to your email)
+
+    // For now, log the subscription
+    console.log('Newsletter subscription:', email);
+
+    // Example: Send to your email via EmailJS (if configured)
+    // You can use the same EmailJS setup as the contact form
+
+    // Example: Mailchimp integration
+    /*
+    const response = await fetch('https://your-domain.us1.list-manage.com/subscribe/post-json?u=YOUR_USER_ID&id=YOUR_LIST_ID', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            EMAIL: email,
+            FNAME: '',
+            LNAME: ''
+        })
+    });
+    
+    if (!response.ok) {
+        throw new Error('Failed to subscribe');
+    }
+    
+    return response.json();
+    */
+
+    // For now, simulate success
+    return Promise.resolve({ success: true });
 }
 
 // ============================================
@@ -233,12 +349,23 @@ if (contactForm) {
             // Option 2: Send to your backend API
             // Option 3: Use a service like Formspree, EmailJS, etc.
 
-            // For now, simulate API call
-            await submitForm(formData);
+            // Submit form
+            const result = await submitForm(formData);
 
             // Show success message
             formSuccess.classList.remove('hidden');
             formError.classList.add('hidden');
+
+            // Update success message based on method used
+            const successText = formSuccess.querySelector('p');
+            if (successText) {
+                if (result && result.method === 'mailto') {
+                    successText.textContent = 'Your email client should open with the message. If it doesn\'t, please contact us directly at donrockglobalservicesltd@gmail.com';
+                } else {
+                    successText.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+                }
+            }
+
             contactForm.reset();
 
             // Scroll to success message
@@ -250,12 +377,25 @@ if (contactForm) {
                 submitBtnText.classList.remove('hidden');
                 submitBtnLoader.classList.add('hidden');
                 formSuccess.classList.add('hidden');
-            }, 5000);
+            }, 8000); // Longer delay for mailto method
 
         } catch (error) {
             console.error('Form submission error:', error);
+
+            // Show error message
             formError.classList.remove('hidden');
             formSuccess.classList.add('hidden');
+
+            // Update error message if it's a specific error
+            const errorText = formError.querySelector('p');
+            if (errorText) {
+                if (error.message && error.message.includes('EmailJS not configured')) {
+                    errorText.textContent = 'Email service not configured yet. Your email client should open. If not, please contact us directly at donrockglobalservicesltd@gmail.com';
+                } else {
+                    errorText.textContent = `Failed to send message: ${error.message || 'Please try again or contact us directly at donrockglobalservicesltd@gmail.com'}`;
+                }
+            }
+
             formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
             // Reset button state
@@ -337,11 +477,6 @@ function clearFieldError(e) {
 
 // Submit form function - Sends to your email via EmailJS
 async function submitForm(formData) {
-    // Check if EmailJS is loaded
-    if (typeof emailjs === 'undefined') {
-        throw new Error('EmailJS script not loaded. Please check your internet connection.');
-    }
-
     // ============================================
     // CONFIGURE YOUR EMAILJS CREDENTIALS HERE
     // ============================================
@@ -355,23 +490,65 @@ async function submitForm(formData) {
     const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE'; // Get from EmailJS Account → General
     const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE'; // Get from EmailJS Email Services
     const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // Get from EmailJS Email Templates
-    const YOUR_EMAIL = 'chinemere2025@icloud.com'; // Your email address
+    const YOUR_EMAIL = 'donrockglobalservicesltd@gmail.com'; // Your email address
 
-    // Initialize EmailJS
-    emailjs.init(EMAILJS_PUBLIC_KEY);
+    // Check if EmailJS credentials are configured
+    if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY_HERE' ||
+        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID_HERE' ||
+        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID_HERE') {
 
-    // Send email
-    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        to_email: YOUR_EMAIL, // Send to your email
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone || 'Not provided',
-        product: formData.product || 'Not specified',
-        quantity: formData.quantity || 'Not specified',
-        subject: formData.subject,
-        message: formData.message,
-        reply_to: formData.email // So you can reply directly
-    });
+        // EmailJS not configured yet - use mailto fallback
+        console.log('EmailJS not configured. Using mailto fallback.');
+
+        // Create mailto link with form data
+        const emailSubject = encodeURIComponent(`Contact Form: ${formData.subject}`);
+        const emailBody = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+
+Product Interest: ${formData.product || 'Not specified'}
+Quantity: ${formData.quantity || 'Not specified'} tons
+
+Message:
+${formData.message}
+        `.trim());
+
+        // Open email client
+        window.location.href = `mailto:${YOUR_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+
+        // Return success after a delay (so mailto opens)
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return { success: true, method: 'mailto' };
+    }
+
+    // Check if EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS script not loaded. Please check your internet connection.');
+    }
+
+    try {
+        // Initialize EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // Send email
+        const result = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_email: YOUR_EMAIL, // Send to your email
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone || 'Not provided',
+            product: formData.product || 'Not specified',
+            quantity: formData.quantity || 'Not specified',
+            subject: formData.subject,
+            message: formData.message,
+            reply_to: formData.email // So you can reply directly
+        });
+
+        return result;
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        throw new Error(`Failed to send email: ${error.text || error.message}`);
+    }
 }
 
 // ============================================
