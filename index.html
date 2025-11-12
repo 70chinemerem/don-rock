@@ -599,19 +599,19 @@
           </div>
           <!-- Portfolio Item 4 -->
           <div
-            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl active:shadow-xl transition-all duration-300 fade-in-on-scroll stagger-4">
-            <div
-              class="aspect-[4/3] relative bg-gray-200 overflow-hidden cursor-pointer touch-manipulation select-none">
+            class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-on-scroll stagger-4">
+            <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden">
               <img src="src/assets/images/fine-chippings.jpeg" alt="Fine Chippings 1/4 inch"
-                class="w-full h-full object-cover group-hover:scale-110 active:scale-105 transition-transform duration-300 pointer-events-none">
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
               <!-- Fallback gradient if image not found -->
               <div
                 class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity">
               </div>
             </div>
+            <!-- Description Overlay - Shows on Hover -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div class="w-full p-6 text-white">
                 <h3 class="text-2xl font-bold mb-2">Fine Chippings (1/4 inch)</h3>
                 <p class="text-gray-200">Perfect for concrete production and finishing works</p>
               </div>
@@ -1372,7 +1372,7 @@
     <img id="lightboxImage" src="" alt="" class="max-w-full max-h-full object-contain">
   </div>
 
-  <script type="module" src="src/main.js"></script>
+<script type="module" src="src/main.js"></script>
   <script>
     // Mobile menu toggle functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
