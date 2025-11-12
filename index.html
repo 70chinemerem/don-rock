@@ -80,7 +80,15 @@
     </div>
     <!-- Mobile Navigation Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white">
-      <nav class="flex flex-col px-4 py-4 space-y-1">
+      <!-- Close Button -->
+      <div class="flex justify-end px-4 pt-4 pb-2">
+        <button id="mobileMenuClose" class="p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col px-4 pb-4 space-y-1">
         <a href="#hero"
           class="px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-medium">Home</a>
         <a href="#about"
@@ -1368,13 +1376,24 @@
     // Mobile menu toggle functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
 
     if (mobileMenuBtn && mobileMenu) {
+      // Open/close menu with hamburger button
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
+    }
 
-      // Close mobile menu when clicking on a link
+    // Close menu with close button
+    if (mobileMenuClose && mobileMenu) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+
+    // Close mobile menu when clicking on a link
+    if (mobileMenu) {
       const mobileMenuLinks = mobileMenu.querySelectorAll('a');
       mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
