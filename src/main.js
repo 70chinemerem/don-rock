@@ -283,7 +283,7 @@ if (backToTopBtn) {
 // Image Lightbox Functionality
 // ============================================
 const portfolioImages = document.querySelectorAll('#portfolio img');
-const portfolioItems = document.querySelectorAll('#portfolio > div > div'); // Portfolio item containers
+const portfolioItems = document.querySelectorAll('#portfolio .group > div'); // Portfolio item containers (the div with cursor-pointer)
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const closeLightbox = document.getElementById('closeLightbox');
