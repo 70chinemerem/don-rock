@@ -41,11 +41,19 @@ Please add the following images to this directory:
   - Image of your company facility, processing plant, or operations
   - Should represent your business professionally
 
-### Logo (Optional)
-- **logo.png** (200x200px recommended, transparent background preferred)
-  - Your company logo
-  - Will replace the "DR" text logo in the header
-  - PNG format with transparent background works best
+### Logo Files (Created)
+- **logo.svg** - Full logo with company name (240x60px)
+  - Used for full branding displays
+  - Includes icon and text
+  
+- **logo-icon.svg** - Icon only version (64x64px)
+  - Used in header navigation
+  - Used in footer
+  - Used as Apple touch icon
+  
+- **favicon.svg** - Browser favicon (32x32px)
+  - Appears in browser tabs
+  - Modern SVG format supported by all browsers
 
 ## Image Guidelines
 

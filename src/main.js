@@ -260,6 +260,45 @@ if (quoteCalculator) {
 }
 
 // ============================================
+// Active Navigation Link Highlighting
+// ============================================
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    let currentSection = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.offsetHeight;
+
+        if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-blue-600', 'bg-blue-50');
+        link.classList.add('text-gray-700');
+
+        if (link.getAttribute('data-section') === currentSection) {
+            link.classList.remove('text-gray-700');
+            link.classList.add('text-blue-600', 'bg-blue-50');
+        }
+    });
+}
+
+// Update active link on scroll (throttled for performance)
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(updateActiveNavLink, 100);
+});
+window.addEventListener('load', updateActiveNavLink);
+
+// ============================================
 // Smooth Scroll Enhancement
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -278,6 +317,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+
+            // Update active nav link after scroll
+            setTimeout(updateActiveNavLink, 500);
 
             // Close mobile menu if open
             const mobileMenu = document.getElementById('mobileMenu');

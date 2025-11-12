@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners -->
+  <rect width="32" height="32" rx="6" fill="#1e40af"/>
+  
+  <!-- Simplified Rock Icon for small size -->
+  <g transform="translate(6, 6)">
+    <!-- Main rock shape -->
+    <path d="M8 10 L12 4 L18 6 L20 12 L16 16 L10 14 Z" fill="white" opacity="0.95" stroke="none"/>
+    <!-- Secondary rock -->
+    <path d="M12 8 L16 2 L20 4 L22 10 L18 14 L14 12 Z" fill="white" opacity="0.85" stroke="none"/>
+    <!-- Tertiary rock -->
+    <path d="M4 12 L8 6 L14 8 L16 14 L12 16 L8 15 Z" fill="white" opacity="0.9" stroke="none"/>
+  </g>
+</svg>

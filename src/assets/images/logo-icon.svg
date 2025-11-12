@@ -1,0 +1,26 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="38" fill="url(#iconGradient)" stroke="none"/>
+  
+  <!-- Professional Rock/Stone Icon - Multiple overlapping shapes for depth -->
+  <g transform="translate(12, 12)">
+    <!-- Main Rock Shape - Largest, front layer -->
+    <path d="M22 26 L28 12 L38 16 L42 28 L34 36 L24 32 Z" fill="white" opacity="0.95" stroke="none"/>
+    <!-- Secondary Rock Shape - Middle layer -->
+    <path d="M28 20 L34 8 L42 12 L44 24 L38 30 L30 28 Z" fill="white" opacity="0.85" stroke="none"/>
+    <!-- Tertiary Rock Shape - Back layer -->
+    <path d="M10 30 L16 18 L24 22 L26 32 L20 36 L14 34 Z" fill="white" opacity="0.9" stroke="none"/>
+    <!-- Small accent rocks for texture -->
+    <circle cx="30" cy="26" r="2" fill="#1e40af" opacity="0.4"/>
+    <circle cx="34" cy="30" r="1.5" fill="#1e40af" opacity="0.3"/>
+    <circle cx="18" cy="28" r="1" fill="#1e40af" opacity="0.35"/>
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
