@@ -264,22 +264,28 @@ html {
 /* Mobile Support for Portfolio Descriptions */
 /* Show descriptions by default on mobile, hide on desktop until hover */
 @media (max-width: 767px) {
-  #portfolio .group .absolute.inset-0.bg-gradient-to-t {
+
+  /* Make descriptions visible by default on mobile */
+  #portfolio .group>.absolute.inset-0.bg-gradient-to-t {
     opacity: 1 !important;
   }
 
-  #portfolio .group .absolute.inset-0.bg-gradient-to-br {
+  /* Show colored gradient overlay on mobile */
+  #portfolio .group>div>.absolute.inset-0.bg-gradient-to-br {
     opacity: 0.2 !important;
   }
 }
 
 /* Desktop: Keep hover behavior */
 @media (min-width: 768px) {
-  #portfolio .group .absolute.inset-0.bg-gradient-to-t {
+
+  /* Hide descriptions by default on desktop */
+  #portfolio .group>.absolute.inset-0.bg-gradient-to-t {
     opacity: 0;
   }
 
-  #portfolio .group:hover .absolute.inset-0.bg-gradient-to-t {
+  /* Show descriptions on hover */
+  #portfolio .group:hover>.absolute.inset-0.bg-gradient-to-t {
     opacity: 1;
   }
 }
