@@ -174,31 +174,256 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Enhanced Contact Form Validation
+// Enhanced Contact Form Validation & Submission
 // ============================================
-const contactForm = document.querySelector('#contact form');
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitBtnText = document.getElementById('submitBtnText');
+const submitBtnLoader = document.getElementById('submitBtnLoader');
+const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearFieldError);
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Hide previous messages
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
+
+        // Validate all fields
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!validateField({ target: input })) {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            formError.classList.remove('hidden');
+            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            return;
+        }
 
         // Get form values
         const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
             product: document.getElementById('product').value,
             quantity: document.getElementById('quantity').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
+            subject: document.getElementById('subject').value.trim(),
+            message: document.getElementById('message').value.trim()
         };
 
-        // Here you would typically send this to your backend
-        console.log('Contact form submission:', formData);
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtnText.classList.add('hidden');
+        submitBtnLoader.classList.remove('hidden');
 
-        // Show success message
-        alert('Thank you for your inquiry! We will get back to you soon.');
-        contactForm.reset();
+        try {
+            // Option 1: Send via Email (using mailto as fallback)
+            // Option 2: Send to your backend API
+            // Option 3: Use a service like Formspree, EmailJS, etc.
+
+            // For now, simulate API call
+            await submitForm(formData);
+
+            // Show success message
+            formSuccess.classList.remove('hidden');
+            formError.classList.add('hidden');
+            contactForm.reset();
+
+            // Scroll to success message
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Reset button state after delay
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtnText.classList.remove('hidden');
+                submitBtnLoader.classList.add('hidden');
+                formSuccess.classList.add('hidden');
+            }, 5000);
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formError.classList.remove('hidden');
+            formSuccess.classList.add('hidden');
+            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtnText.classList.remove('hidden');
+            submitBtnLoader.classList.add('hidden');
+        }
     });
+}
+
+// Validate individual field
+function validateField(e) {
+    const field = e.target;
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+
+    // Remove previous error styling
+    field.classList.remove('border-red-500', 'border-green-500');
+    const errorElement = field.parentElement.querySelector('.field-error');
+    if (errorElement) {
+        errorElement.remove();
+    }
+
+    // Required field validation
+    if (field.hasAttribute('required') && !value) {
+        isValid = false;
+        errorMessage = 'This field is required';
+    }
+
+    // Email validation
+    if (field.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid email address';
+        }
+    }
+
+    // Phone validation (Nigerian format)
+    if (field.type === 'tel' && value) {
+        const phoneRegex = /^(\+234|0)?[789]\d{9}$/;
+        const cleanedPhone = value.replace(/\s|-/g, '');
+        if (!phoneRegex.test(cleanedPhone) && value.length > 0) {
+            isValid = false;
+            errorMessage = 'Please enter a valid Nigerian phone number';
+        }
+    }
+
+    // Message length validation
+    if (field.id === 'message' && value && value.length < 10) {
+        isValid = false;
+        errorMessage = 'Message must be at least 10 characters';
+    }
+
+    // Show error or success
+    if (!isValid) {
+        field.classList.add('border-red-500');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error text-red-600 text-sm mt-1';
+        errorDiv.textContent = errorMessage;
+        field.parentElement.appendChild(errorDiv);
+    } else if (value) {
+        field.classList.add('border-green-500');
+    }
+
+    return isValid;
+}
+
+// Clear field error on input
+function clearFieldError(e) {
+    const field = e.target;
+    field.classList.remove('border-red-500');
+    const errorElement = field.parentElement.querySelector('.field-error');
+    if (errorElement) {
+        errorElement.remove();
+    }
+}
+
+// Submit form function (can be customized for your backend)
+async function submitForm(formData) {
+    // ============================================
+    // OPTION 1: EmailJS (Recommended - Easiest)
+    // ============================================
+    // Step 1: Sign up at https://www.emailjs.com/ (free tier: 200 emails/month)
+    // Step 2: Create an email service (Gmail, Outlook, etc.)
+    // Step 3: Create an email template
+    // Step 4: Get your Public Key, Service ID, and Template ID
+    // Step 5: Uncomment the EmailJS script in index.html
+    // Step 6: Uncomment and configure the code below:
+
+    /*
+    // Initialize EmailJS (only needed once)
+    if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS script not loaded. Uncomment the script tag in index.html');
+    }
+    
+    emailjs.init('YOUR_PUBLIC_KEY_HERE'); // Replace with your Public Key from EmailJS dashboard
+    
+    return emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        product: formData.product || 'Not specified',
+        quantity: formData.quantity || 'Not specified',
+        subject: formData.subject,
+        message: formData.message
+    });
+    */
+
+    // ============================================
+    // OPTION 2: Backend API (Custom Backend)
+    // ============================================
+    // If you have your own backend server, uncomment and configure:
+
+    /*
+    const response = await fetch('https://yourdomain.com/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Failed to submit form');
+    }
+    
+    return response.json();
+    */
+
+    // ============================================
+    // OPTION 3: Formspree (No Backend Needed)
+    // ============================================
+    // Step 1: Sign up at https://formspree.io/ (free tier: 50 submissions/month)
+    // Step 2: Get your form endpoint
+    // Step 3: Uncomment and configure:
+
+    /*
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Failed to submit form');
+    }
+    
+    return response.json();
+    */
+
+    // ============================================
+    // CURRENT: Simulation (for testing)
+    // ============================================
+    // This is currently active for testing purposes
+    // Replace with one of the options above for production
+
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // Log form data (for development)
+    console.log('Contact form submission:', formData);
+    console.log('To enable email sending, configure EmailJS, Backend API, or Formspree in submitForm() function');
+
+    // Simulate success
+    return Promise.resolve({ success: true });
 }
 
 // ============================================

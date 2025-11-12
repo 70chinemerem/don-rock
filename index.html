@@ -16,6 +16,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="src/assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="src/assets/images/logo-icon.svg">
+  <!-- EmailJS for Contact Form (uncomment when you have EmailJS credentials) -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
   <title>DonRock Global Services Ltd | Chippings & Stones for Construction in Nigeria</title>
 </head>
 
@@ -111,7 +113,7 @@
     <section id="hero"
       class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
       <!-- Background Image -->
-      <img src="src/assets/images/hero-background.jpg" alt="Construction site with chippings and stones"
+      <img src="src/assets/images/hero-background.svg" alt="Construction site with chippings and stones"
         class="absolute inset-0 w-full h-full object-cover opacity-30">
       <div class="absolute inset-0 bg-black/40"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
@@ -495,7 +497,7 @@
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden cursor-pointer">
-              <img src="src/assets/images/fine-chippings.jpg" alt="Fine Chippings 1/4 inch"
+              <img src="src/assets/images/fine-chippings.jpeg" alt="Fine Chippings 1/4 inch"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
               <!-- Fallback gradient if image not found -->
               <div
@@ -514,7 +516,7 @@
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden cursor-pointer">
-              <img src="src/assets/images/coarse-aggregates.jpg" alt="Coarse Aggregates"
+              <img src="src/assets/images/coarse-aggregates.jpeg" alt="Coarse Aggregates"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
               <!-- Fallback gradient if image not found -->
               <div
@@ -533,7 +535,7 @@
           <div
             class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <div class="aspect-[4/3] relative bg-gray-200 overflow-hidden cursor-pointer">
-              <img src="src/assets/images/mixed-graded-stones.jpg" alt="Mixed Graded Stones"
+              <img src="src/assets/images/mixed-graded-stones.jpeg" alt="Mixed Graded Stones"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
               <!-- Fallback gradient if image not found -->
               <div
@@ -890,7 +892,10 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p class="text-gray-600">+234 8037335414 / +234 8057368500</p>
+                  <p class="text-gray-600">
+                    <a href="tel:+2348037335414" class="hover:text-blue-600 transition-colors">+234 8037335414</a> /
+                    <a href="tel:+2348057368500" class="hover:text-blue-600 transition-colors">+234 8057368500</a>
+                  </p>
                 </div>
               </div>
               <!-- Email -->
@@ -904,7 +909,10 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p class="text-gray-600">donrockglobalservicesltd@gmail.com</p>
+                  <p class="text-gray-600">
+                    <a href="mailto:donrockglobalservicesltd@gmail.com"
+                      class="hover:text-blue-600 transition-colors break-all">donrockglobalservicesltd@gmail.com</a>
+                  </p>
                 </div>
               </div>
               <!-- Business Hours -->
@@ -925,7 +933,7 @@
           <!-- Contact Form -->
           <div class="bg-gray-50 rounded-xl p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-            <form class="space-y-6">
+            <form id="contactForm" class="space-y-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                 <input type="text" id="name" name="name" required
@@ -979,10 +987,40 @@
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your chippings/stones requirements..."></textarea>
               </div>
-              <button type="submit"
-                class="w-full px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Send Message
+              <button type="submit" id="submitBtn"
+                class="w-full px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                <span id="submitBtnText">Send Message</span>
+                <span id="submitBtnLoader" class="hidden">
+                  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                  </svg>
+                  Sending...
+                </span>
               </button>
+              <!-- Success Message -->
+              <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <p class="text-green-800 font-medium">Message sent successfully! We'll get back to you soon.</p>
+                </div>
+              </div>
+              <!-- Error Message -->
+              <div id="formError" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                  </svg>
+                  <p class="text-red-800 font-medium">Failed to send message. Please try again or contact us directly.
+                  </p>
+                </div>
+              </div>
             </form>
           </div>
         </div>
