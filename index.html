@@ -16,8 +16,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="src/assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="src/assets/images/logo-icon.svg">
-  <!-- EmailJS for Contact Form -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <title>DonRock Global Services Ltd | Chippings & Stones for Construction in Nigeria</title>
 </head>
 
@@ -112,89 +110,42 @@
     <!-- Hero Section -->
     <section id="hero"
       class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
-      <!-- Animated Background Elements -->
+      <!-- Simple Animated Background -->
       <div class="absolute inset-0 overflow-hidden">
-        <!-- Floating Shapes -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
-        <div
-          class="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-float-slow-delayed">
-        </div>
-        <div
-          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl animate-pulse-slow">
-        </div>
-
-        <!-- Grid Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10"
-          style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-float-slow-delayed">
         </div>
       </div>
 
       <!-- Background Image -->
       <img src="src/assets/images/hero-background.svg" alt="Construction site with chippings and stones"
-        class="absolute inset-0 w-full h-full object-cover opacity-20 animate-fade-in-slow">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+        class="absolute inset-0 w-full h-full object-cover opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
 
       <!-- Main Content -->
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-        <!-- Badge/Tag -->
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-8 animate-slide-down border border-white/20">
-          <svg class="w-4 h-4 text-green-300 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <span class="text-sm font-medium text-blue-100">Trusted Supplier Since 2020</span>
-        </div>
-
-        <!-- Main Heading with Animation -->
-        <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 leading-tight">
-          <span class="block animate-slide-up opacity-0" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
-            DonRock Global
-          </span>
-          <span
-            class="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent animate-slide-up opacity-0"
-            style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <!-- Main Heading -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight fade-in-on-scroll">
+          <span class="block">DonRock Global</span>
+          <span class="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
             Services Ltd
           </span>
         </h1>
 
-        <!-- Subtitle with Animation -->
-        <p class="text-xl md:text-2xl lg:text-3xl mb-4 text-blue-100 max-w-4xl mx-auto font-medium animate-slide-up opacity-0"
-          style="animation-delay: 0.6s; animation-fill-mode: forwards;">
+        <!-- Subtitle -->
+        <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 fade-in-on-scroll"
+          style="animation-delay: 0.2s;">
           Premium Chippings & Stones for Construction
         </p>
-        <p class="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto mb-12 animate-slide-up opacity-0"
-          style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+        <p class="text-lg text-blue-200 max-w-2xl mx-auto mb-12 fade-in-on-scroll" style="animation-delay: 0.4s;">
           Quality aggregates that build the foundation of excellence in Nigeria
         </p>
 
-        <!-- Key Features Pills -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up opacity-0"
-          style="animation-delay: 1s; animation-fill-mode: forwards;">
-          <span
-            class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm border border-white/20 hover:bg-white/20 transition-all">
-            ✓ Quality Assured
-          </span>
-          <span
-            class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm border border-white/20 hover:bg-white/20 transition-all">
-            ✓ Bulk Supply
-          </span>
-          <span
-            class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm border border-white/20 hover:bg-white/20 transition-all">
-            ✓ Fast Delivery
-          </span>
-          <span
-            class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm border border-white/20 hover:bg-white/20 transition-all">
-            ✓ Competitive Pricing
-          </span>
-        </div>
-
-        <!-- CTA Buttons with Animation -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up opacity-0"
-          style="animation-delay: 1.2s; animation-fill-mode: forwards;">
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 fade-in-on-scroll"
+          style="animation-delay: 0.6s;">
           <a href="#contact"
-            class="group px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-white/20 flex items-center gap-2 text-lg">
+            class="group px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center gap-2">
             <span>Get a Quote</span>
             <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none"
               stroke="currentColor" viewBox="0 0 24 24">
@@ -202,60 +153,41 @@
             </svg>
           </a>
           <a href="#portfolio"
-            class="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-110 backdrop-blur-sm flex items-center gap-2 text-lg">
+            class="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
               </path>
             </svg>
-            <span>View Our Products</span>
+            <span>View Products</span>
           </a>
         </div>
 
-        <!-- Trust Indicators -->
-        <div class="mt-16 max-w-5xl mx-auto animate-slide-up opacity-0"
-          style="animation-delay: 1.4s; animation-fill-mode: forwards;">
-          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Trust Item 1 -->
-              <div class="text-center group">
-                <div
-                  class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-2">Quality Assured</h3>
-                <p class="text-blue-100 text-sm">ISO certified aggregates meeting international standards</p>
-              </div>
-              <!-- Trust Item 2 -->
-              <div class="text-center group">
-                <div
-                  class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-2">Fast Delivery</h3>
-                <p class="text-blue-100 text-sm">Reliable bulk delivery across Nigeria on schedule</p>
-              </div>
-              <!-- Trust Item 3 -->
-              <div class="text-center group">
-                <div
-                  class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-2">Competitive Pricing</h3>
-                <p class="text-blue-100 text-sm">Best value for premium quality construction materials</p>
-              </div>
-            </div>
+        <!-- Simple Trust Badges -->
+        <div class="flex flex-wrap justify-center gap-6 fade-in-on-scroll" style="animation-delay: 0.8s;">
+          <div class="flex items-center gap-2 text-blue-100">
+            <svg class="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Quality Assured</span>
+          </div>
+          <div class="flex items-center gap-2 text-blue-100">
+            <svg class="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Fast Delivery</span>
+          </div>
+          <div class="flex items-center gap-2 text-blue-100">
+            <svg class="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Competitive Pricing</span>
           </div>
         </div>
       </div>
@@ -263,7 +195,7 @@
       <!-- Scroll Indicator -->
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <a href="#calculator" class="flex flex-col items-center gap-2 group">
-          <span class="text-sm text-blue-200 font-medium">Scroll to explore</span>
+          <span class="text-sm text-blue-200">Scroll</span>
           <svg class="w-6 h-6 text-white transform group-hover:translate-y-1 transition-transform" fill="none"
             stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -516,7 +448,7 @@
           <div class="relative fade-in-on-scroll">
             <!-- Company/Facility Image -->
             <div class="mb-6 rounded-2xl overflow-hidden shadow-xl group">
-              <img src="src/assets/images/company-facility.jpg" alt="DonRock Global Services facility"
+              <img src="src/assets/images/don rock.jpeg" alt="DonRock Global Services facility"
                 class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
             <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-2xl card-hover">

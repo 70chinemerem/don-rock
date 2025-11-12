@@ -445,8 +445,8 @@ if (contactForm) {
             // Update success message based on method used
             const successText = formSuccess.querySelector('p');
             if (successText) {
-                if (result && result.method === 'mailto') {
-                    successText.textContent = 'Your email client should open with the message. If it doesn\'t, please contact us directly at donrockglobalservicesltd@gmail.com';
+                if (result && result.method === 'whatsapp') {
+                    successText.textContent = 'WhatsApp is opening with your message. If it doesn\'t open, please contact us directly on WhatsApp: +234 8037335414';
                 } else {
                     successText.textContent = 'Message sent successfully! We\'ll get back to you soon.';
                 }
@@ -475,10 +475,10 @@ if (contactForm) {
             // Update error message if it's a specific error
             const errorText = formError.querySelector('p');
             if (errorText) {
-                if (error.message && error.message.includes('EmailJS not configured')) {
-                    errorText.textContent = 'Email service not configured yet. Your email client should open. If not, please contact us directly at donrockglobalservicesltd@gmail.com';
+                if (error.message && error.message.includes('WhatsApp')) {
+                    errorText.textContent = 'Failed to open WhatsApp. Please contact us directly on WhatsApp: +234 8037335414 or email: donrockglobalservicesltd@gmail.com';
                 } else {
-                    errorText.textContent = `Failed to send message: ${error.message || 'Please try again or contact us directly at donrockglobalservicesltd@gmail.com'}`;
+                    errorText.textContent = `Failed to send message: ${error.message || 'Please try again or contact us directly on WhatsApp: +234 8037335414'}`;
                 }
             }
 
@@ -561,80 +561,60 @@ function clearFieldError(e) {
     }
 }
 
-// Submit form function - Sends to your email via EmailJS
+// Submit form function - Sends to WhatsApp
 async function submitForm(formData) {
     // ============================================
-    // CONFIGURE YOUR EMAILJS CREDENTIALS HERE
+    // WHATSAPP CONFIGURATION
     // ============================================
-    // Follow these steps to get your credentials:
-    // 1. Go to https://www.emailjs.com/ and sign up (free)
-    // 2. Create a Gmail service and connect your email
-    // 3. Create an email template
-    // 4. Get your Public Key, Service ID, and Template ID
-    // 5. Replace the values below:
+    // Your WhatsApp number (include country code, no + or spaces)
+    // Example: 2348037335414 for +234 8037335414
+    const WHATSAPP_NUMBER = '2348037335414'; // Your WhatsApp number
 
-    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE'; // Get from EmailJS Account → General
-    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE'; // Get from EmailJS Email Services
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // Get from EmailJS Email Templates
-    const YOUR_EMAIL = 'donrockglobalservicesltd@gmail.com'; // Your email address
+    // Format the message for WhatsApp
+    const productNames = {
+        'granite-chippings': 'Granite Chippings',
+        'crushed-stones': 'Crushed Stones',
+        'road-base': 'Road Base Materials',
+        'concrete-aggregates': 'Concrete Aggregates',
+        'fine-chippings': 'Fine Chippings',
+        'coarse-aggregates': 'Coarse Aggregates',
+        'mixed-graded': 'Mixed Graded Stones',
+        'custom': 'Custom Grading',
+        'other': 'Other'
+    };
 
-    // Check if EmailJS credentials are configured
-    if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY_HERE' ||
-        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID_HERE' ||
-        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID_HERE') {
+    const productName = productNames[formData.product] || formData.product || 'Not specified';
 
-        // EmailJS not configured yet - use mailto fallback
-        console.log('EmailJS not configured. Using mailto fallback.');
+    // Create a well-formatted WhatsApp message
+    const whatsappMessage = `*New Contact Form Submission*
 
-        // Create mailto link with form data
-        const emailSubject = encodeURIComponent(`Contact Form: ${formData.subject}`);
-        const emailBody = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || 'Not provided'}
 
-Product Interest: ${formData.product || 'Not specified'}
-Quantity: ${formData.quantity || 'Not specified'} tons
+*Product Interest:* ${productName}
+*Quantity:* ${formData.quantity ? formData.quantity + ' tons' : 'Not specified'}
 
-Message:
+*Subject:* ${formData.subject}
+
+*Message:*
 ${formData.message}
-        `.trim());
 
-        // Open email client
-        window.location.href = `mailto:${YOUR_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+---
+_Submitted from DonRock Website_`.trim();
 
-        // Return success after a delay (so mailto opens)
-        await new Promise(resolve => setTimeout(resolve, 500));
-        return { success: true, method: 'mailto' };
-    }
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // Check if EmailJS is loaded
-    if (typeof emailjs === 'undefined') {
-        throw new Error('EmailJS script not loaded. Please check your internet connection.');
-    }
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-    try {
-        // Initialize EmailJS
-        emailjs.init(EMAILJS_PUBLIC_KEY);
+    // Open WhatsApp in a new tab/window
+    window.open(whatsappUrl, '_blank');
 
-        // Send email
-        const result = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            to_email: YOUR_EMAIL, // Send to your email
-            from_name: formData.name,
-            from_email: formData.email,
-            phone: formData.phone || 'Not provided',
-            product: formData.product || 'Not specified',
-            quantity: formData.quantity || 'Not specified',
-            subject: formData.subject,
-            message: formData.message,
-            reply_to: formData.email // So you can reply directly
-        });
-
-        return result;
-    } catch (error) {
-        console.error('EmailJS error:', error);
-        throw new Error(`Failed to send email: ${error.text || error.message}`);
-    }
+    // Return success after a short delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return { success: true, method: 'whatsapp' };
 }
 
 // ============================================
