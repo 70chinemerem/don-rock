@@ -1,0 +1,39 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky -->
+  <rect width="1200" height="300" fill="#e0f2fe"/>
+  
+  <!-- Ground -->
+  <rect y="300" width="1200" height="500" fill="#f3f4f6"/>
+  
+  <!-- Facility Building -->
+  <rect x="200" y="200" width="400" height="300" fill="#cbd5e1" stroke="#94a3b8" stroke-width="3"/>
+  <rect x="250" y="250" width="80" height="120" fill="#64748b" stroke="#475569" stroke-width="2"/>
+  <rect x="380" y="250" width="80" height="120" fill="#64748b" stroke="#475569" stroke-width="2"/>
+  <rect x="510" y="250" width="80" height="120" fill="#64748b" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <polygon points="180,200 400,120 600,200" fill="#94a3b8" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Processing Area -->
+  <rect x="700" y="350" width="300" height="200" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="750" y="400" width="200" height="100" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+  
+  <!-- Storage Piles -->
+  <ellipse cx="300" cy="650" rx="120" ry="80" fill="#6b7280" opacity="0.8"/>
+  <ellipse cx="280" cy="630" rx="100" ry="60" fill="#9ca3af" opacity="0.8"/>
+  
+  <ellipse cx="600" cy="680" rx="140" ry="90" fill="#6b7280" opacity="0.8"/>
+  <ellipse cx="580" cy="660" rx="110" ry="70" fill="#9ca3af" opacity="0.8"/>
+  
+  <ellipse cx="900" cy="650" rx="130" ry="85" fill="#6b7280" opacity="0.8"/>
+  <ellipse cx="880" cy="630" rx="105" ry="65" fill="#9ca3af" opacity="0.8"/>
+  
+  <!-- Equipment -->
+  <rect x="750" y="550" width="60" height="40" rx="3" fill="#475569" transform="rotate(15 780 570)"/>
+  <rect x="850" y="560" width="50" height="35" rx="3" fill="#475569" transform="rotate(-10 875 577.5)"/>
+  
+  <!-- Text Label -->
+  <text x="600" y="100" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1f2937" text-anchor="middle">DonRock Global Services</text>
+  <text x="600" y="140" font-family="Arial, sans-serif" font-size="20" fill="#6b7280" text-anchor="middle">Processing Facility & Operations</text>
+</svg>
+

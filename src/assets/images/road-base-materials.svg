@@ -1,0 +1,33 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#e5e7eb"/>
+  
+  <!-- Road Base Materials Pattern -->
+  <g opacity="0.9">
+    <!-- Large base stones -->
+    <rect x="50" y="200" width="120" height="80" rx="8" fill="#6b7280" transform="rotate(-15 110 240)"/>
+    <rect x="200" y="180" width="140" height="90" rx="8" fill="#4b5563" transform="rotate(10 270 225)"/>
+    <rect x="380" y="190" width="130" height="85" rx="8" fill="#6b7280" transform="rotate(-8 445 232.5)"/>
+    
+    <!-- Medium stones -->
+    <rect x="100" y="320" width="80" height="60" rx="6" fill="#9ca3af" transform="rotate(20 140 350)"/>
+    <rect x="250" y="310" width="90" height="65" rx="6" fill="#6b7280" transform="rotate(-12 295 342.5)"/>
+    <rect x="450" y="300" width="85" height="70" rx="6" fill="#4b5563" transform="rotate(15 492.5 335)"/>
+    
+    <!-- Small aggregates -->
+    <circle cx="150" cy="450" r="25" fill="#9ca3af"/>
+    <circle cx="300" cy="440" r="30" fill="#6b7280"/>
+    <circle cx="500" cy="450" r="28" fill="#4b5563"/>
+    <circle cx="180" cy="480" r="20" fill="#9ca3af"/>
+    <circle cx="350" cy="470" r="22" fill="#6b7280"/>
+    <circle cx="550" cy="480" r="24" fill="#4b5563"/>
+    
+    <!-- Fine material layer -->
+    <rect x="0" y="520" width="800" height="80" fill="#d1d5db" opacity="0.7"/>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2937" text-anchor="middle">Road Base Materials</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Highway Construction Aggregates</text>
+</svg>
+

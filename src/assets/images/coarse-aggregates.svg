@@ -1,0 +1,29 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9fafb"/>
+  
+  <!-- Coarse Aggregates - Large stones -->
+  <g opacity="0.9">
+    <!-- Very large stones -->
+    <rect x="80" y="120" width="180" height="140" rx="12" fill="#4b5563" transform="rotate(-20 170 190)"/>
+    <rect x="300" y="100" width="200" height="150" rx="12" fill="#374151" transform="rotate(15 400 175)"/>
+    <rect x="550" y="130" width="170" height="130" rx="12" fill="#4b5563" transform="rotate(-10 635 195)"/>
+    
+    <!-- Large stones -->
+    <rect x="120" y="300" width="140" height="110" rx="10" fill="#6b7280" transform="rotate(25 190 355)"/>
+    <rect x="320" y="290" width="150" height="120" rx="10" fill="#4b5563" transform="rotate(-18 395 350)"/>
+    <rect x="520" y="310" width="130" height="100" rx="10" fill="#374151" transform="rotate(22 585 360)"/>
+    
+    <!-- Medium-large stones -->
+    <rect x="60" y="450" width="100" height="80" rx="8" fill="#6b7280" transform="rotate(-15 110 490)"/>
+    <rect x="200" y="440" width="110" height="90" rx="8" fill="#4b5563" transform="rotate(20 255 485)"/>
+    <rect x="380" y="450" width="105" height="85" rx="8" fill="#374151" transform="rotate(-12 432.5 492.5)"/>
+    <rect x="540" y="460" width="100" height="80" rx="8" fill="#6b7280" transform="rotate(18 590 500)"/>
+    <rect x="680" y="450" width="95" height="85" rx="8" fill="#4b5563" transform="rotate(-10 727.5 492.5)"/>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2937" text-anchor="middle">Coarse Aggregates</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Large Size Stones for Foundation Work</text>
+</svg>
+

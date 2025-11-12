@@ -1,0 +1,57 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+  
+  <!-- Fine Chippings Pattern - Small, uniform particles -->
+  <g opacity="0.9">
+    <!-- Small chippings scattered -->
+    <circle cx="100" cy="150" r="12" fill="#9ca3af"/>
+    <circle cx="150" cy="180" r="10" fill="#6b7280"/>
+    <circle cx="200" cy="160" r="11" fill="#9ca3af"/>
+    <circle cx="250" cy="190" r="13" fill="#4b5563"/>
+    <circle cx="300" cy="170" r="10" fill="#9ca3af"/>
+    <circle cx="350" cy="200" r="12" fill="#6b7280"/>
+    <circle cx="400" cy="180" r="11" fill="#9ca3af"/>
+    <circle cx="450" cy="210" r="10" fill="#4b5563"/>
+    <circle cx="500" cy="190" r="13" fill="#9ca3af"/>
+    <circle cx="550" cy="220" r="11" fill="#6b7280"/>
+    <circle cx="600" cy="200" r="12" fill="#9ca3af"/>
+    <circle cx="650" cy="230" r="10" fill="#4b5563"/>
+    <circle cx="700" cy="210" r="11" fill="#9ca3af"/>
+    
+    <!-- Second layer -->
+    <circle cx="120" cy="280" r="10" fill="#6b7280"/>
+    <circle cx="170" cy="300" r="12" fill="#9ca3af"/>
+    <circle cx="220" cy="290" r="11" fill="#4b5563"/>
+    <circle cx="270" cy="310" r="10" fill="#6b7280"/>
+    <circle cx="320" cy="300" r="13" fill="#9ca3af"/>
+    <circle cx="370" cy="320" r="11" fill="#4b5563"/>
+    <circle cx="420" cy="310" r="10" fill="#6b7280"/>
+    <circle cx="470" cy="330" r="12" fill="#9ca3af"/>
+    <circle cx="520" cy="320" r="11" fill="#4b5563"/>
+    <circle cx="570" cy="340" r="10" fill="#6b7280"/>
+    <circle cx="620" cy="330" r="12" fill="#9ca3af"/>
+    <circle cx="670" cy="350" r="11" fill="#4b5563"/>
+    
+    <!-- Third layer - denser -->
+    <circle cx="80" cy="400" r="9" fill="#9ca3af"/>
+    <circle cx="130" cy="420" r="10" fill="#6b7280"/>
+    <circle cx="180" cy="410" r="11" fill="#9ca3af"/>
+    <circle cx="230" cy="430" r="9" fill="#4b5563"/>
+    <circle cx="280" cy="420" r="10" fill="#9ca3af"/>
+    <circle cx="330" cy="440" r="12" fill="#6b7280"/>
+    <circle cx="380" cy="430" r="11" fill="#9ca3af"/>
+    <circle cx="430" cy="450" r="10" fill="#4b5563"/>
+    <circle cx="480" cy="440" r="9" fill="#9ca3af"/>
+    <circle cx="530" cy="460" r="11" fill="#6b7280"/>
+    <circle cx="580" cy="450" r="10" fill="#9ca3af"/>
+    <circle cx="630" cy="470" r="12" fill="#4b5563"/>
+    <circle cx="680" cy="460" r="11" fill="#9ca3af"/>
+    <circle cx="730" cy="480" r="10" fill="#6b7280"/>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2937" text-anchor="middle">Fine Chippings</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">1/4 inch - Perfect for Concrete Production</text>
+</svg>
+
