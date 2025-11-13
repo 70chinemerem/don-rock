@@ -497,10 +497,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Video Example 1: Facility Tour -->
           <div class="fade-in-on-scroll stagger-1">
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group video-wrapper">
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
               <!-- Video Player -->
-              <video class="video-player w-full h-full object-cover" controls controlsList="nodownload"
-                poster="src/assets/images/don rock.jpeg" preload="metadata" playsinline data-video-id="video1">
+              <video class="w-full h-full object-cover" controls controlsList="nodownload"
+                poster="src/assets/images/don rock.jpeg" preload="metadata" playsinline>
                 <!-- Video source - uncomment and update path when you have your video -->
                 <source src="src/assets/videos/video1.mp4" type="video/mp4">
                 <!-- Fallback message if video format is not supported -->
@@ -508,26 +508,6 @@
                   Your browser does not support the video tag. Please use a modern browser.
                 </p>
               </video>
-              <!-- Brightness Control -->
-              <div
-                class="video-brightness-control absolute top-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div class="flex items-center gap-3">
-                  <button class="brightness-toggle text-white hover:text-blue-400 transition-colors"
-                    aria-label="Toggle brightness control" title="Brightness">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                      </path>
-                    </svg>
-                  </button>
-                  <div class="brightness-slider-container hidden">
-                    <input type="range" min="0.3" max="2" step="0.1" value="1"
-                      class="brightness-slider w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer"
-                      aria-label="Brightness">
-                    <span class="brightness-value text-white text-xs ml-2 w-8 text-center">100%</span>
-                  </div>
-                </div>
-              </div>
               <!-- Video Overlay Info -->
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
@@ -539,10 +519,10 @@
 
           <!-- Video Example 2: Product Demo -->
           <div class="fade-in-on-scroll stagger-2">
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group video-wrapper">
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
               <!-- Video Player -->
-              <video class="video-player w-full h-full object-cover" controls controlsList="nodownload"
-                poster="src/assets/images/stone1.jpeg" preload="metadata" playsinline data-video-id="video2">
+              <video class="w-full h-full object-cover" controls controlsList="nodownload"
+                poster="src/assets/images/stone1.jpeg" preload="metadata" playsinline>
                 <!-- Video source - uncomment and update path when you have your video -->
                 <source src="src/assets/videos/product-demo.mp4" type="video/mp4">
                 <!-- Fallback message if video format is not supported -->
@@ -550,26 +530,6 @@
                   Your browser does not support the video tag. Please use a modern browser.
                 </p>
               </video>
-              <!-- Brightness Control -->
-              <div
-                class="video-brightness-control absolute top-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div class="flex items-center gap-3">
-                  <button class="brightness-toggle text-white hover:text-blue-400 transition-colors"
-                    aria-label="Toggle brightness control" title="Brightness">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                      </path>
-                    </svg>
-                  </button>
-                  <div class="brightness-slider-container hidden">
-                    <input type="range" min="0.3" max="2" step="0.1" value="1"
-                      class="brightness-slider w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer"
-                      aria-label="Brightness">
-                    <span class="brightness-value text-white text-xs ml-2 w-8 text-center">100%</span>
-                  </div>
-                </div>
-              </div>
               <!-- Video Overlay Info -->
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
