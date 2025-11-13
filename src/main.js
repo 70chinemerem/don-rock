@@ -2,12 +2,17 @@
 import './style.css'
 // Import video utilities for enhanced video handling
 import { initVideos } from './utils/video.js'
+// Import animated promotional video
+import { initAnimatedPromoVideo } from './components/promotional-video.js'
 
 // Application initialization
 console.log('DonRock Global Services application loaded')
 
 // Initialize video utilities
 initVideos()
+
+// Initialize animated promotional video
+initAnimatedPromoVideo()
 
 // ============================================
 // Hero Section Animations & Effects
