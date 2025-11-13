@@ -499,17 +499,18 @@
           <div class="fade-in-on-scroll stagger-1">
             <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
               <!-- Video Player -->
-              <video class="w-full h-full object-cover" controls poster="src/utils/video1.mp4" preload="metadata">
-                <!-- Add your video file here -->
-                <!-- <source src="src/assets/videos/facility-tour.mp4" type="video/mp4"> -->
-                <!-- Fallback message -->
+              <video class="w-full h-full object-cover" controls controlsList="nodownload"
+                poster="src/assets/images/don rock.jpeg" preload="metadata" playsinline>
+                <!-- Video source - uncomment and update path when you have your video -->
+                <source src="src/assets/videos/video1.mp4" type="video/mp4">
+                <!-- Fallback message if video format is not supported -->
                 <p class="absolute inset-0 flex items-center justify-center text-gray-500 bg-gray-100">
-                  Video: facility-tour.mp4
+                  Your browser does not support the video tag. Please use a modern browser.
                 </p>
               </video>
               <!-- Video Overlay Info -->
               <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 <h3 class="text-white font-bold text-lg mb-1">Facility Tour</h3>
                 <p class="text-gray-200 text-sm">Take a virtual tour of our processing facility</p>
               </div>
@@ -520,18 +521,18 @@
           <div class="fade-in-on-scroll stagger-2">
             <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg group">
               <!-- Video Player -->
-              <video class="w-full h-full object-cover" controls poster="src/assets/images/stone1.jpeg"
-                preload="metadata">
-                <!-- Add your video file here -->
-                <!-- <source src="src/assets/videos/product-demo.mp4" type="video/mp4"> -->
-                <!-- Fallback message -->
+              <video class="w-full h-full object-cover" controls controlsList="nodownload"
+                poster="src/assets/images/stone1.jpeg" preload="metadata" playsinline>
+                <!-- Video source - uncomment and update path when you have your video -->
+                <source src="src/assets/videos/product-demo.mp4" type="video/mp4">
+                <!-- Fallback message if video format is not supported -->
                 <p class="absolute inset-0 flex items-center justify-center text-gray-500 bg-gray-100">
-                  Video: product-demo.mp4
+                  Your browser does not support the video tag. Please use a modern browser.
                 </p>
               </video>
               <!-- Video Overlay Info -->
               <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 <h3 class="text-white font-bold text-lg mb-1">Product Demonstration</h3>
                 <p class="text-gray-200 text-sm">See our quality chippings and stones up close</p>
               </div>

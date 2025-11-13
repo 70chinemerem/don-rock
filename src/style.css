@@ -289,3 +289,100 @@ html {
     opacity: 1;
   }
 }
+
+/* ============================================
+   Video Player Styles
+   ============================================ */
+
+/* Ensure video controls are always accessible */
+video {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+/* Video controls styling - ensure volume control works */
+video::-webkit-media-controls-panel {
+  display: flex !important;
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button {
+  display: flex !important;
+}
+
+/* Ensure volume control is visible and functional */
+video::-webkit-media-controls-volume-slider {
+  width: 100px !important;
+  margin: 0 10px !important;
+}
+
+video::-webkit-media-controls-volume-slider-container {
+  display: flex !important;
+  align-items: center;
+}
+
+/* Firefox video controls */
+video::-moz-media-controls {
+  display: flex !important;
+}
+
+/* Ensure video controls overlay doesn't block interactions */
+.video-container video,
+video[controls] {
+  cursor: pointer;
+}
+
+/* Video container hover - ensure controls are accessible */
+.video-container:hover video::-webkit-media-controls-panel,
+video:hover::-webkit-media-controls-panel {
+  opacity: 1 !important;
+}
+
+/* Ensure video overlay doesn't block video controls */
+.video-container .absolute.overlay {
+  pointer-events: none;
+}
+
+/* Video wrapper to ensure proper z-index */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper video {
+  z-index: 1;
+}
+
+.video-wrapper .absolute.overlay {
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Mobile video controls */
+@media (max-width: 768px) {
+  video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Ensure volume control is accessible on mobile */
+  video::-webkit-media-controls-volume-slider {
+    width: 80px !important;
+  }
+}
+
+/* Ensure video is not muted by default (for volume control) */
+video:not([muted]) {
+  /* Volume control will work */
+}
+
+/* Video loading state */
+video[poster] {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
