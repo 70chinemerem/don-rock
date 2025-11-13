@@ -1,8 +1,13 @@
 // Main entry point for the DonRock Global Services application
 import './style.css'
+// Import video utilities for enhanced video handling
+import { initVideos } from './utils/video.js'
 
 // Application initialization
 console.log('DonRock Global Services application loaded')
+
+// Initialize video utilities
+initVideos()
 
 // ============================================
 // Hero Section Animations & Effects
