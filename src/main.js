@@ -716,6 +716,140 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', updateActiveNavLink);
 
 // ============================================
+// Scroll Progress Indicator
+// ============================================
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = scrolled + '%';
+    });
+}
+
+// ============================================
+// Story Slideshow/Carousel
+// ============================================
+(function initStorySlideshow() {
+    const slides = document.querySelectorAll('#storySlideshow .slide');
+    const dots = document.querySelectorAll('#storySlideshow .slide-dot');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    
+    if (!slides.length) return;
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    const slideDuration = 5000; // 5 seconds per slide
+    
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+            slide.style.opacity = '0';
+        });
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        if (slides[index]) {
+            slides[index].classList.add('active');
+            slides[index].style.opacity = '1';
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+        
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+    
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, slideDuration);
+    }
+    
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+    
+    // Event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+    
+    // Pause on hover
+    const slideshow = document.getElementById('storySlideshow');
+    if (slideshow) {
+        slideshow.addEventListener('mouseenter', stopAutoSlide);
+        slideshow.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Initialize
+    showSlide(0);
+    startAutoSlide();
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (slideshow) {
+        slideshow.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        slideshow.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+    }
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left - next
+            } else {
+                prevSlide(); // Swipe right - previous
+            }
+            stopAutoSlide();
+            startAutoSlide();
+        }
+    }
+})();
+
+// ============================================
 // Smooth Scroll Enhancement
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
