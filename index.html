@@ -131,9 +131,20 @@
       </div>
 
       <!-- Background Image -->
-      <img src="src/assets/images/hero-background.svg" alt="Construction site with chippings and stones"
-        class="absolute inset-0 w-full h-full object-cover opacity-20">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
+      <img src="src/assets/images/hero-background.jpg" alt="Construction site with chippings and stones"
+        class="absolute inset-0 w-full h-full object-cover opacity-30"
+        onerror="this.src='src/assets/images/hero-background.svg'; this.style.opacity='0.2';">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+      
+      <!-- Additional Hero Images - Floating Product Showcase -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <img src="src/assets/images/hero-product-1.jpg" alt="Premium aggregates"
+          class="absolute top-20 right-10 w-32 h-32 md:w-48 md:h-48 rounded-xl shadow-2xl opacity-0 md:opacity-20 animate-float-slow object-cover"
+          onerror="this.style.display='none';">
+        <img src="src/assets/images/hero-product-2.jpg" alt="Quality chippings"
+          class="absolute bottom-20 left-10 w-32 h-32 md:w-48 md:h-48 rounded-xl shadow-2xl opacity-0 md:opacity-20 animate-float-slow-delayed object-cover"
+          onerror="this.style.display='none';">
+      </div>
 
       <!-- Main Content -->
       <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
