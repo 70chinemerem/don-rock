@@ -716,6 +716,26 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', updateActiveNavLink);
 
 // ============================================
+// Initialize Lucide Icons
+// ============================================
+function initLucideIcons() {
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLucideIcons);
+} else {
+    initLucideIcons();
+}
+
+// Re-initialize after dynamic content loads
+setTimeout(initLucideIcons, 500);
+setTimeout(initLucideIcons, 1000);
+
+// ============================================
 // Scroll Progress Indicator
 // ============================================
 const scrollProgress = document.getElementById('scrollProgress');
