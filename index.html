@@ -219,6 +219,12 @@
 
     <!-- Product Calculator Section -->
     <section id="calculator" class="py-20 bg-gradient-to-br from-blue-50 to-gray-50 relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 opacity-10">
+        <img src="src/assets/images/calculator-background.jpg" alt="Construction materials"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none';">
+      </div>
       <!-- Background decoration -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -mr-48 -mt-48"></div>
       <div class="absolute bottom-0 left-0 w-96 h-96 bg-gray-100/30 rounded-full blur-3xl -ml-48 -mb-48"></div>
@@ -486,42 +492,63 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Service Card 1 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-1 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-1 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
+              <img src="src/assets/images/service-granite-chippings.jpg" alt="Granite Chippings"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
                 </path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Granite Chippings</h3>
             <p class="text-gray-600 leading-relaxed">
               Premium quality granite chippings in various sizes for road construction, concrete production, and
               building foundations. Durable and weather-resistant aggregates.
             </p>
+            </div>
           </div>
           <!-- Service Card 2 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-2 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-2 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-gray-400 to-gray-600 overflow-hidden">
+              <img src="src/assets/images/service-crushed-stones.jpg" alt="Crushed Stones"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
                 </path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Crushed Stones</h3>
             <p class="text-gray-600 leading-relaxed">
               High-grade crushed stones for construction projects. Available in multiple sizes for drainage,
               landscaping, and structural applications.
             </p>
+            </div>
           </div>
           <!-- Service Card 3 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-3 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-3 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
+              <img src="src/assets/images/service-road-base.jpg" alt="Road Base Materials"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
                 </path>
@@ -529,54 +556,80 @@
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Road Base Materials</h3>
             <p class="text-gray-600 leading-relaxed">
               Specialized road base materials and aggregates for highway construction, road maintenance, and
               infrastructure projects. Tested and certified quality.
             </p>
+            </div>
           </div>
           <!-- Service Card 4 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-4 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-4 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 overflow-hidden">
+              <img src="src/assets/images/service-concrete-aggregates.jpg" alt="Concrete Aggregates"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
                 </path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Concrete Aggregates</h3>
             <p class="text-gray-600 leading-relaxed">
               Quality aggregates for concrete production. Properly graded stones and chippings that ensure strong,
               durable concrete for all construction needs.
             </p>
+            </div>
           </div>
           <!-- Service Card 5 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-5 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-5 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 overflow-hidden">
+              <img src="src/assets/images/service-bulk-delivery.jpg" alt="Bulk Supply & Delivery"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
                 </path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Bulk Supply & Delivery</h3>
             <p class="text-gray-600 leading-relaxed">
               Reliable bulk supply and timely delivery services. We handle large-scale orders for construction
               companies, contractors, and infrastructure projects.
             </p>
+            </div>
           </div>
           <!-- Service Card 6 -->
-          <div class="bg-gray-50 rounded-xl p-8 card-hover border border-gray-100 fade-in-on-scroll stagger-6 group">
-            <div
-              class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 icon-bounce group-hover:bg-blue-700 transition-colors">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-gray-50 rounded-xl overflow-hidden card-hover border border-gray-100 fade-in-on-scroll stagger-6 group">
+            <!-- Service Image -->
+            <div class="relative h-48 bg-gradient-to-br from-teal-400 to-teal-600 overflow-hidden">
+              <img src="src/assets/images/service-custom-grading.jpg" alt="Custom Grading"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <!-- Fallback Icon if image not found -->
+              <div class="hidden w-full h-full items-center justify-center">
+                <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
                 </path>
               </svg>
             </div>
+            </div>
+            <div class="p-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Custom Grading</h3>
             <p class="text-gray-600 leading-relaxed">
               Custom grading services to meet your specific project requirements. We can provide chippings and stones in
@@ -1128,9 +1181,11 @@
               recommended!"
             </p>
             <div class="flex items-center">
-              <div
-                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                AO
+              <!-- Client Photo -->
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-blue-600">
+                <img src="src/assets/images/testimonial-client-1.jpg" alt="Adebayo Ogunleye"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('bg-blue-600'); this.parentElement.innerHTML='<span class=\'text-white font-bold text-sm flex items-center justify-center w-full h-full\'>AO</span>';">
               </div>
               <div>
                 <div class="font-semibold text-gray-900">Adebayo Ogunleye</div>
@@ -1175,9 +1230,11 @@
               delivery every time!"
             </p>
             <div class="flex items-center">
-              <div
-                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                FK
+              <!-- Client Photo -->
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-green-600">
+                <img src="src/assets/images/testimonial-client-2.jpg" alt="Fatima Kano"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('bg-green-600'); this.parentElement.innerHTML='<span class=\'text-white font-bold text-sm flex items-center justify-center w-full h-full\'>FK</span>';">
               </div>
               <div>
                 <div class="font-semibold text-gray-900">Fatima Kano</div>
@@ -1222,9 +1279,11 @@
               infrastructure project."
             </p>
             <div class="flex items-center">
-              <div
-                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                CE
+              <!-- Client Photo -->
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-purple-600">
+                <img src="src/assets/images/testimonial-client-3.jpg" alt="Chukwuemeka Eze"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('bg-purple-600'); this.parentElement.innerHTML='<span class=\'text-white font-bold text-sm flex items-center justify-center w-full h-full\'>CE</span>';">
               </div>
               <div>
                 <div class="font-semibold text-gray-900">Chukwuemeka Eze</div>
